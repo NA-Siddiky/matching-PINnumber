@@ -71,7 +71,6 @@
             }
 
             // Display generated Pin //
-
             function generatePin() {
                 const GeneratePin = document.getElementById("generatePin");
                 GeneratePin.value = getPin();
@@ -87,7 +86,6 @@
 
 
             // Handle calculator button /
-
             const buttonContainer = document.getElementById("digits-container");
             buttonContainer.addEventListener('click', function (event) {
                 const digit = event.target.innerText;
@@ -110,7 +108,6 @@
             })
 
             // verify Pin/
-
             function verifyPin() {
                 const Pin = document.getElementById("generatePin").value;
                 const typedPin = document.getElementById("typed-pin").value;
