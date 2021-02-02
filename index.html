@@ -21,34 +21,37 @@
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input id="typed-pin" class="form-control" type="text">
-                    <div class="numbers">
-                        <div id="digits-container" class="calc-body">
-                            <div class="calc-button-row">
-                                <div class="button">7</div>
-                                <div class="button">8</div>
-                                <div class="button">9</div>
-                            </div>
-                            <div class="calc-button-row">
-                                <div class="button">4</div>
-                                <div class="button">5</div>
-                                <div class="button">6</div>
-                            </div>
-                            <div class="calc-button-row">
-                                <div class="button">1</div>
-                                <div class="button">2</div>
-                                <div class="button">3</div>
-                            </div>
-                            <div class="calc-button-row">
-                                <div class="button">B</div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
-                            </div>
-                            <div>
-                                <button onclick="verifyPin()" type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                    <form action="" name="calc">
+                        <input name="txt" id="typed-pin" class="form-control" type="text">
+                        <div class="numbers">
+                            <div id="digits-container" class="calc-body">
+                                <div class="calc-button-row">
+                                    <div class="button">7</div>
+                                    <div class="button">8</div>
+                                    <div class="button">9</div>
+                                </div>
+                                <div class="calc-button-row">
+                                    <div class="button">4</div>
+                                    <div class="button">5</div>
+                                    <div class="button">6</div>
+                                </div>
+                                <div class="calc-button-row">
+                                    <div class="button">1</div>
+                                    <div class="button">2</div>
+                                    <div class="button">3</div>
+                                </div>
+                                <div class="calc-button-row">
+                                    <div onclick="document.calc.txt.value = document.calc.txt.value.slice( 0, -1 )"
+                                        class="button">B</div>
+                                    <div class="button">0</div>
+                                    <div class="button">C</div>
+                                </div>
                             </div>
                         </div>
+                    </form>
+                    <div>
+                        <button onclick="verifyPin()" type="submit" class="submit-btn">Submit</button>
+                        <p class="action-left">3 try left</p>
                     </div>
                 </div>
             </div>
@@ -77,12 +80,27 @@
 
             }
             function generatePinAction() {
-                const generatePinAction = document.getElementById("missMatch" && "Match"); // Problem-1 with /
-                generatePinAction.style.display = "none"
-                
+                // const match = document.getElementById("Match"); // Problem-1 with /
+                // match.style.display = "none"
+
+                // const missMatch = document.getElementById("missMatch"); // Problem-1 with /
+                // missMatch.style.display = "none"
+
+                checking();
+
                 const typedInput = document.getElementById("typed-pin");
                 typedInput.value = '';
             }
+
+            function checking() {
+                const match = document.getElementById("Match"); // Problem-1 with /
+                match.style.display = "none"
+
+                const missMatch = document.getElementById("missMatch"); // Problem-1 with /
+                missMatch.style.display = "none"
+            }
+
+
 
 
             // Handle calculator button /
@@ -96,8 +114,15 @@
                         typedInput.value = '';
                     }
                     if (digit === "B") {
-                        const typedInput = document.getElementById("typed-pin");
-                        typedInput.value = typedInput.value - " ";              //Problem -2 /
+
+                        // let typedInput = document.getElementById("typed-pin");
+                        // typedInput = typedInput.value;
+
+                        // let length = typedInput.length - 1;
+                        // for (let i = 0; i < length; i++) {
+                        //     length = length - " ";
+                        // }
+                        // console.log(length);
                     }
                 }
                 else {
